@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "Open New Tab in the Group",
+  "version": "1.0",
+  "permissions": [
+    "tabs"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "firefox@vitayuzu.day"
+    }
+  }
+}
