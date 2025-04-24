@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "Open New Tab in the Group",
+  "name": "Open New Tab outside any groups",
   "version": "1.0",
   "permissions": [
     "tabs"
@@ -9,6 +9,14 @@
     "scripts": [
       "background.js"
     ]
+  },
+  "commands": {
+    "open-tab-outside": {
+      "suggested_key": {
+        "default": "Ctrl+Alt+T"
+      },
+      "description": "Open new tab without group"
+    }
   },
   "browser_specific_settings": {
     "gecko": {

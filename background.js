@@ -21,4 +21,15 @@ async function moveToGroupIfExist(newTab) {
 
 browser.tabs.onCreated.addListener(moveToGroupIfExist);
 
-browser.tabs.onActivated.addListener(handleTabActivated);
+// browser.tabs.onActivated.addListener(handleTabActivated);
+
+// Keyborard shortcut
+browser.commands.onCommand.addListener((cmd) => {
+    if (cmd === "open-tab-outside") {
+        let newTab = browser.tabs.create({});
+        newTab.then( (t) => {
+            console.log("new tab: ", t);
+            browser.tabs.ungroup([t.id]);
+        });
+    }
+});
