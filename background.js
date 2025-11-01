@@ -33,3 +33,22 @@ browser.commands.onCommand.addListener((cmd) => {
         });
     }
 });
+
+browser.contextMenus.create({
+  id: "open-new-tab-outside-group",
+  title: "New tab outside group",
+  contexts: ["page"],
+  icons: {
+    "16": "/icon.svg"
+  }
+});
+
+browser.contextMenus.onClicked.addListener((info, tab) => {
+  if (info.menuItemId === "open-new-tab-outside-group") {
+    let newTab = browser.tabs.create({});
+    newTab.then( (t) => {
+        console.log("new tab: ", t);
+        browser.tabs.ungroup([t.id]);
+    });
+  }
+});

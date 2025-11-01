@@ -2,8 +2,12 @@
   "manifest_version": 2,
   "name": "Open New Tab outside any groups",
   "version": "1.0",
+  "icons": {
+    "16": "icon.svg"
+  },
   "permissions": [
-    "tabs"
+    "tabs",
+    "contextMenus"
   ],
   "background": {
     "scripts": [
@@ -13,7 +17,7 @@
   "commands": {
     "open-tab-outside": {
       "suggested_key": {
-        "default": "Ctrl+Alt+T"
+        "default": "Alt+W"
       },
       "description": "Open new tab without group"
     }
